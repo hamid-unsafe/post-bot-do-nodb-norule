@@ -85,8 +85,8 @@ BOT_TOKEN = '1171756035:AAEgEenIMkPu8z3nqw0myVQiizm4gYDrNBw'
 client = TelegramClient(client_name, API_ID, API_HASH)
 bot = TelegramClient(bot_name, API_ID, API_HASH)
 
-# client.start()
-# bot.start(bot_token=BOT_TOKEN)
+client.start()
+bot.start(bot_token=BOT_TOKEN)
 
 @bot.on(events.NewMessage)
 async def bot_new_message_handler(event):
@@ -517,9 +517,7 @@ async def botCommandRecieved(event, command):
 
 AS_setupState()
 
-print(app_state)
+client.run_until_disconnected()
 
-# client.run_until_disconnected()
-
-# db.closeDB()
+db.closeDB()
 
